@@ -116,7 +116,7 @@ export default function Problems() {
   const activeSolution = problems[activeIndex].solution;
 
   return (
-    <section id="problems" className="py-20 md:py-28 bg-white">
+    <section id="problems" className="py-20 md:py-28 bg-[linear-gradient(180deg,#fbfdff_0%,#eef4fb_100%)]">
       <div className="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -182,7 +182,7 @@ export default function Problems() {
                     "flex items-center gap-4 px-5 py-4 rounded-2xl cursor-pointer transition-all duration-300",
                     isActive
                       ? "border border-gold/20 bg-gold/5"
-                      : "border border-gray-100 bg-white hover:border-gray-200 hover:bg-gray-50",
+                      : "border border-[#d9e4f4] bg-[linear-gradient(180deg,#ffffff_0%,#eef4fb_100%)] hover:border-[#c8d8ef] hover:bg-[#f5f9ff]",
                   ].join(" ")}
                   style={isActive ? { borderLeftColor: "#C9A163", borderLeftWidth: 4 } : {}}
                 >

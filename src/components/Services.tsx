@@ -128,7 +128,7 @@ function StatusCell({ data }: { data: CellData }) {
 
 export default function Services() {
   return (
-    <section id="dich-vu" className="py-20 md:py-28 bg-gray-50/50">
+    <section id="dich-vu" className="py-20 md:py-28 bg-[linear-gradient(180deg,#f8fbff_0%,#edf4fb_100%)]">
       <div className="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Badge */}
@@ -179,13 +179,13 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="rounded-2xl overflow-hidden shadow-md border border-gray-100 bg-white border-t-4 border-t-gold"
+          className="rounded-2xl overflow-hidden shadow-md border border-[#d9e4f4] bg-[linear-gradient(180deg,#ffffff_0%,#eef4fb_100%)] border-t-4 border-t-gold"
         >
           <table className="w-full border-collapse">
 
             {/* ── Header ── */}
             <thead>
-              <tr className="bg-gray-50 border-b border-gray-200">
+              <tr className="bg-[#f5f9ff] border-b border-[#dce6f4]">
 
                 {/* Criteria column header */}
                 <th className="text-left px-6 py-5 w-[34%]">
@@ -208,14 +208,14 @@ export default function Services() {
 
                 {/* Agency */}
                 <th className="px-4 py-5 text-center w-[22%]">
-                  <span className="text-sm font-semibold text-gray-400">
+                    <span className="text-sm font-semibold text-gray-400">
                     Agency lớn
                   </span>
                 </th>
 
                 {/* Freelancer */}
                 <th className="px-4 py-5 text-center w-[22%]">
-                  <span className="text-sm font-semibold text-gray-400">
+                    <span className="text-sm font-semibold text-gray-400">
                     Freelancer
                   </span>
                 </th>
@@ -230,7 +230,7 @@ export default function Services() {
                 return (
                   <tr
                     key={i}
-                    className={`${isLast ? "" : "border-b border-gray-100"} bg-white hover:bg-gray-50/60 transition-colors duration-150`}
+                    className={`${isLast ? "" : "border-b border-[#e2ebf7]"} bg-transparent hover:bg-[#f7faff] transition-colors duration-150`}
                   >
                     {/* Criteria */}
                     <td className="px-6 py-4">
@@ -268,7 +268,7 @@ export default function Services() {
               <tr>
                 <td
                   colSpan={4}
-                  className="bg-gray-50 border-t border-gray-100 text-center py-4 text-sm font-semibold text-gray-500 tracking-wide"
+                  className="bg-[#f5f9ff] border-t border-[#e2ebf7] text-center py-4 text-sm font-semibold text-gray-500 tracking-wide"
                 >
                   Tối ưu chi phí &amp; hiệu quả dài hạn với{" "}
                   <span className="text-gold font-bold">SHORT PRO.</span>

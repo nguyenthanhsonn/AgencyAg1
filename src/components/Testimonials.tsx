@@ -94,7 +94,7 @@ export default function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.55, delay: i * 0.12 }}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="relative bg-white rounded-2xl p-7 flex flex-col cursor-default"
+              className="relative bg-[linear-gradient(180deg,#ffffff_0%,#eff5fc_100%)] border border-[#d9e4f4] rounded-2xl p-7 flex flex-col cursor-default"
             >
               {/* Stars */}
               <div className="flex gap-0.5 mb-4">

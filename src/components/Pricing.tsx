@@ -62,7 +62,7 @@ export default function Pricing() {
   };
 
   return (
-    <section id="bang-gia" className="py-20 md:py-28 bg-white">
+    <section id="bang-gia" className="py-20 md:py-28 bg-[linear-gradient(180deg,#fbfdff_0%,#eef4fb_100%)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Badge */}
         <motion.div
@@ -111,7 +111,7 @@ export default function Pricing() {
               className={`relative rounded-2xl p-8 flex flex-col border-2 ${
                 plan.featured
                   ? "shadow-2xl scale-105 bg-navy border-gold"
-                  : "shadow-sm bg-white border-gray-200"
+                  : "shadow-sm bg-[linear-gradient(180deg,#ffffff_0%,#eff5fc_100%)] border-[#d9e4f4]"
               }`}
             >
               {/* Popular badge */}

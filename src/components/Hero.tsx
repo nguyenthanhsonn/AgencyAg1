@@ -1,12 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const stats = [
-  { value: "100+", label: "Video được tạo ra", color: "#C9A163" },
-  { value: "50+", label: "Khách hàng tin dùng", color: "#F2E3BA" },
-  { value: "10M+", label: "Views Tiktok", color: "#ffffff" },
-];
+import CountUp from "@/uiux/CountUp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -195,19 +190,68 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.56 }}
               className="flex flex-wrap gap-8"
             >
-              {stats.map((stat, i) => (
-                <div key={i} className="flex flex-col">
-                  <span
-                    className="text-[1.875rem] font-black tracking-tight leading-none"
-                    style={{ color: stat.color }}
-                  >
-                    {stat.value}
-                  </span>
-                  <span className="text-[0.8rem] text-white/50 font-medium mt-1">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
+              <div className="flex flex-col">
+                <span
+                  className="text-[1.875rem] font-black tracking-tight leading-none"
+                  style={{ color: "#C9A163" }}
+                >
+                  <CountUp
+                    from={0}
+                    to={100}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text"
+                    startCounting={false}
+                  />
+                  +
+                </span>
+                <span className="text-[0.8rem] text-white/50 font-medium mt-1">
+                  Video được tạo ra
+                </span>
+              </div>
+
+              <div className="flex flex-col">
+                <span
+                  className="text-[1.875rem] font-black tracking-tight leading-none"
+                  style={{ color: "#F2E3BA" }}
+                >
+                  <CountUp
+                    from={0}
+                    to={50}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text"
+                    startCounting={false}
+                  />
+                  +
+                </span>
+                <span className="text-[0.8rem] text-white/50 font-medium mt-1">
+                  Khách hàng tin dùng
+                </span>
+              </div>
+
+              <div className="flex flex-col">
+                <span
+                  className="text-[1.875rem] font-black tracking-tight leading-none"
+                  style={{ color: "#ffffff" }}
+                >
+                  <CountUp
+                    from={0}
+                    to={10}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="count-up-text"
+                    startCounting={false}
+                  />
+                  M+
+                </span>
+                <span className="text-[0.8rem] text-white/50 font-medium mt-1">
+                  Views Tiktok
+                </span>
+              </div>
             </motion.div>
           </div>
 

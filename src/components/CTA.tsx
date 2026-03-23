@@ -126,7 +126,7 @@ export default function CTA() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white py-20 md:py-28">
+    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f9fbff_0%,#eef4fb_100%)] py-20 md:py-28">
       {/* Background blobs */}
       <div
         className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-175 h-175 rounded-full opacity-[0.06]"
@@ -194,7 +194,7 @@ export default function CTA() {
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="group bg-white rounded-2xl border border-gray-100 shadow-sm p-8 flex flex-col gap-5 transition-all duration-200 hover:border-gold"
+            className="group bg-[linear-gradient(180deg,#ffffff_0%,#eff5fc_100%)] rounded-2xl border border-[#d9e4f4] shadow-sm p-8 flex flex-col gap-5 transition-all duration-200 hover:border-gold"
           >
             {/* Icon */}
             <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center">
@@ -225,7 +225,7 @@ export default function CTA() {
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="group bg-white rounded-2xl border border-gray-100 shadow-sm p-8 flex flex-col gap-5 transition-all duration-200 hover:border-navy"
+            className="group bg-[linear-gradient(180deg,#ffffff_0%,#eef4fb_100%)] rounded-2xl border border-[#d9e4f4] shadow-sm p-8 flex flex-col gap-5 transition-all duration-200 hover:border-navy"
           >
             {/* Icon */}
             <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ backgroundColor: "rgba(10,31,68,0.08)" }}>

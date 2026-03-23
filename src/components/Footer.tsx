@@ -1,5 +1,6 @@
 "use client";
 
+import "@/scss/footer.scss";
 import Image from "next/image";
 import { HiPhone, HiMapPin } from "react-icons/hi2";
 
@@ -46,8 +47,9 @@ export default function Footer() {
   };
 
   return (
-    <footer id="lien-he" className="bg-navy-dark pt-16 pb-8">
+    <footer id="lien-he" className="site-footer pt-16 pb-8">
       <div className="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-footer__panel">
         {/* Top grid — 3 columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-white/10">
 
@@ -60,7 +62,7 @@ export default function Footer() {
               height={42}
               className="h-16 lg:h-28 w-auto object-contain mb-4"
             />
-            <p className="text-white/50 text-sm leading-relaxed mb-6">
+            <p className="text-white text-[0.95rem] leading-relaxed mb-6">
               Dịch vụ xây dựng kênh TikTok chuyên nghiệp, giúp thương hiệu của
               bạn được nhớ, được tin và được mua.
             </p>
@@ -81,7 +83,7 @@ export default function Footer() {
 
           {/* Column 2 — Dich vu */}
           <div>
-            <h4 className="text-white font-black text-sm uppercase tracking-wider mb-5">
+            <h4 className="text-white font-black text-[0.95rem] uppercase tracking-wider mb-5">
               Dịch vụ
             </h4>
             <ul className="space-y-3">
@@ -89,7 +91,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <button
                     onClick={() => handleNav(link.href)}
-                    className="text-white/50 text-sm hover:text-white transition-colors duration-200 cursor-pointer text-left"
+                    className="text-white text-[0.95rem] hover:text-gold-light transition-colors duration-200 cursor-pointer text-left"
                   >
                     {link.label}
                   </button>
@@ -100,14 +102,14 @@ export default function Footer() {
 
           {/* Column 3 — Lien he */}
           <div>
-            <h4 className="text-white font-black text-sm uppercase tracking-wider mb-5">
+            <h4 className="text-white font-black text-[0.95rem] uppercase tracking-wider mb-5">
               Liên hệ
             </h4>
             <ul className="space-y-4">
               <li>
                 <a
                   href="tel:05238600068"
-                  className="flex items-start gap-3 text-white/50 text-sm hover:text-white transition-colors duration-200"
+                  className="flex items-start gap-3 text-white text-[0.95rem] hover:text-gold-light transition-colors duration-200"
                 >
                   <HiPhone className="w-4 h-4 text-gold shrink-0 mt-0.5" />
                   <span>0523 860 068</span>
@@ -116,13 +118,13 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:08884306200"
-                  className="flex items-start gap-3 text-white/50 text-sm hover:text-white transition-colors duration-200"
+                  className="flex items-start gap-3 text-white text-[0.95rem] hover:text-gold-light transition-colors duration-200"
                 >
                   <HiPhone className="w-4 h-4 text-gold shrink-0 mt-0.5" />
                   <span>0888 430 620</span>
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-white/50 text-sm hover:text-white transition-colors duration-200">
+              <li className="flex items-start gap-3 text-white text-[0.95rem] hover:text-gold-light transition-colors duration-200">
                 <HiMapPin className="w-4 h-4 text-gold shrink-0 mt-0.5" />
                 <span>458/64 Đ. 3 Tháng 2, Quận 10, TP. Hồ Chí Minh</span>
               </li>
@@ -132,17 +134,18 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-white/8">
-          <p className="text-white/30 text-sm">
+          <p className="text-white text-[0.92rem]">
             © 2026 SHORT PRO. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <button className="text-white/30 text-sm hover:text-white/60 transition-colors duration-200 cursor-pointer">
+            <button className="text-white text-[0.92rem] hover:text-gold-light transition-colors duration-200 cursor-pointer">
               Chính sách bảo mật
             </button>
-            <button className="text-white/30 text-sm hover:text-white/60 transition-colors duration-200 cursor-pointer">
+            <button className="text-white text-[0.92rem] hover:text-gold-light transition-colors duration-200 cursor-pointer">
               Điều khoản sử dụng
             </button>
           </div>
+        </div>
         </div>
       </div>
     </footer>
