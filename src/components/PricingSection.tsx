@@ -386,30 +386,32 @@ export default function PricingSection() {
   const [activeTab, setActiveTab] = useState<Tab>("chuyen-nghiep");
 
   return (
-    <section className="py-8 px-4 max-w-5xl mx-auto">
-      {/* Tab switcher */}
-      <div className="flex justify-center mb-8">
-        <div className="inline-flex gap-2 bg-[radial-gradient(circle_at_24%_32%,rgba(90,117,166,0.16),transparent_34%),linear-gradient(135deg,rgba(15,33,68,0.88),rgba(24,43,82,0.72))] p-1.5 rounded-full border border-white/12 backdrop-blur-xl shadow-[0_18px_40px_rgba(7,17,39,0.24)]">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={
-                activeTab === tab.id
-                  ? "px-6 py-3 rounded-full text-sm font-semibold uppercase bg-[linear-gradient(135deg,#d9ab61,#f0c57a)] shadow-[0_10px_25px_rgba(201,161,99,0.24)] text-navy transition-all duration-300"
-                  : "px-6 py-3 rounded-full text-sm font-semibold uppercase text-white/72 hover:bg-white/8 transition-all duration-300"
-              }
-            >
-              {tab.label}
-            </button>
-          ))}
+    <section className="py-10 md:py-14 bg-[radial-gradient(circle_at_center,#17325f_0%,#234272_22%,#4f6d98_38%,#b8c8df_62%,#eef4fb_82%,#ffffff_100%)]">
+      <div className="px-4 max-w-5xl mx-auto">
+        {/* Tab switcher */}
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex gap-2 bg-[radial-gradient(circle_at_24%_32%,rgba(90,117,166,0.16),transparent_34%),linear-gradient(135deg,rgba(15,33,68,0.88),rgba(24,43,82,0.72))] p-1.5 rounded-full border border-white/12 backdrop-blur-xl shadow-[0_18px_40px_rgba(7,17,39,0.24)]">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={
+                  activeTab === tab.id
+                    ? "px-6 py-3 rounded-full text-sm font-semibold uppercase bg-[linear-gradient(135deg,#d9ab61,#f0c57a)] shadow-[0_10px_25px_rgba(201,161,99,0.24)] text-navy transition-all duration-300"
+                    : "px-6 py-3 rounded-full text-sm font-semibold uppercase text-white/72 hover:bg-white/8 transition-all duration-300"
+                }
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Active card */}
-      {activeTab === "chuyen-nghiep" && <ChuyenNghiepCard />}
-      {activeTab === "cao-cap" && <CaoCapCard />}
-      {activeTab === "tron-goi" && <TronGoiCard />}
+        {/* Active card */}
+        {activeTab === "chuyen-nghiep" && <ChuyenNghiepCard />}
+        {activeTab === "cao-cap" && <CaoCapCard />}
+        {activeTab === "tron-goi" && <TronGoiCard />}
+      </div>
     </section>
   );
 }

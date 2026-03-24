@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {
   HiShoppingBag,
   HiEye,
@@ -113,10 +115,22 @@ export default function Problems() {
     return () => stopCycle();
   }, [isPaused]);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 700,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 80,
+    });
+  }, []);
+
   const activeSolution = problems[activeIndex].solution;
 
   return (
-    <section id="problems" className="py-20 md:py-28 bg-[linear-gradient(180deg,#fbfdff_0%,#eef4fb_100%)]">
+    <section
+      id="problems"
+      className="py-20 md:py-28 bg-[radial-gradient(circle_at_center,#17325f_0%,#234272_22%,#4f6d98_38%,#b8c8df_62%,#eef4fb_82%,#ffffff_100%)]"
+    >
       <div className="max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -137,7 +151,7 @@ export default function Problems() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl sm:text-5xl font-black text-center text-navy mb-4 leading-tight"
+          className="text-4xl sm:text-5xl font-black text-center text-gold mb-4 leading-tight"
         >
           Làm TikTok mãi mà không phát triển?
           <br className="hidden sm:block" /> Đây là lý do tại sao.
@@ -148,7 +162,7 @@ export default function Problems() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center text-gray-500 mb-14 max-w-xl mx-auto text-base"
+          className="text-center text-gold/80 mb-14 max-w-xl mx-auto text-base"
         >
           90% thương hiệu thất bại trên TikTok không phải vì thiếu ngân sách —
           mà vì thiếu hệ thống.
@@ -181,15 +195,15 @@ export default function Problems() {
                   className={[
                     "flex items-center gap-4 px-5 py-4 rounded-2xl cursor-pointer transition-all duration-300",
                     isActive
-                      ? "border border-gold/20 bg-gold/5"
-                      : "border border-[#d9e4f4] bg-[linear-gradient(180deg,#ffffff_0%,#eef4fb_100%)] hover:border-[#c8d8ef] hover:bg-[#f5f9ff]",
+                      ? "border border-gold/45 bg-[linear-gradient(180deg,#d6aa67_0%,#bf8d45_100%)] shadow-[0_14px_30px_rgba(150,108,43,0.22)]"
+                      : "border border-white/55 bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(245,249,255,0.9)_100%)] hover:border-gold/35 hover:bg-[linear-gradient(180deg,rgba(255,251,242,0.96)_0%,rgba(248,241,226,0.82)_100%)]",
                   ].join(" ")}
                   style={isActive ? { borderLeftColor: "#C9A163", borderLeftWidth: 4 } : {}}
                 >
                   <div
                     className={[
                       "w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all duration-300",
-                      isActive ? "bg-gold/15 text-gold" : "bg-gray-100 text-gray-400",
+                      isActive ? "bg-white/18 text-white" : "bg-white/80 text-gold-dark",
                     ].join(" ")}
                   >
                     <Icon className="w-5 h-5" />
@@ -197,7 +211,7 @@ export default function Problems() {
                   <p
                     className={[
                       "text-sm leading-snug transition-all duration-300",
-                      isActive ? "text-navy font-semibold" : "text-gray-700",
+                      isActive ? "text-white font-semibold" : "text-gold-dark",
                     ].join(" ")}
                   >
                     {problem.text}
@@ -208,12 +222,9 @@ export default function Problems() {
           </motion.div>
 
           {/* RIGHT — Solution card */}
-          <motion.div
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.25 }}
+          <div
             className="lg:w-7/12"
+            data-aos="flip-right"
           >
             <div className="bg-navy rounded-3xl p-8 h-full flex flex-col justify-center min-h-64">
               <AnimatePresence mode="wait">
@@ -253,7 +264,7 @@ export default function Problems() {
                 </motion.div>
               </AnimatePresence>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Bottom Insight bar */}
