@@ -1,19 +1,36 @@
+ "use client";
+
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaLocationArrow } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function LienHePage() {
   const officeAddress = "458/64 Đường 3 Tháng 2, Quận 10, TP. Hồ Chí Minh";
   const encodedOfficeAddress = encodeURIComponent(officeAddress);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 700,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 80,
+    });
+  }, []);
+
   return (
-    <main className="overflow-x-hidden bg-[linear-gradient(180deg,#f7faff_0%,#eef3fa_100%)]">
+    <main className="overflow-x-hidden bg-[radial-gradient(circle_at_center,#17325f_0%,#234272_22%,#4f6d98_38%,#b8c8df_62%,#eef4fb_82%,#ffffff_100%)]">
       <Navbar />
       <section className="pt-36 pb-14 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] gap-10 items-stretch">
           <div className="pt-4">
-            <div className="inline-flex items-center gap-2 bg-navy/5 text-navy px-4 py-1.5 rounded-full font-semibold text-sm mb-6 border border-navy/10">
+            <div
+              className="inline-flex items-center gap-2 bg-navy/5 text-navy px-4 py-1.5 rounded-full font-semibold text-sm mb-6 border border-navy/10"
+              data-aos="fade-up"
+            >
               <Image
                 src="/logos/logo-light.png"
                 alt="Logo"
@@ -24,7 +41,11 @@ export default function LienHePage() {
               Liên hệ với chúng tôi
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-extrabold text-navy font-inter tracking-tight leading-[1.08] mb-6">
+            <h1
+              className="text-4xl md:text-6xl font-extrabold text-navy font-inter tracking-tight leading-[1.08] mb-6"
+              data-aos="fade-up"
+              data-aos-delay="80"
+            >
               Kết nối để bắt đầu
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-gold-dark">
                 {" "}
@@ -32,13 +53,21 @@ export default function LienHePage() {
               </span>
             </h1>
 
-            <p className="text-gray-600 max-w-2xl text-lg leading-8 mb-8">
+            <p
+              className="text-gray-600 max-w-2xl text-lg leading-8 mb-8"
+              data-aos="fade-up"
+              data-aos-delay="140"
+            >
               Bắt đầu xây dựng hệ thống nội dung chuyên nghiệp cho thương hiệu
               của bạn. Chúng tôi phản hồi trong vòng 24h làm việc và có thể tư
               vấn nhanh theo đúng nhu cầu hiện tại.
             </p>
 
-            <div className="flex flex-wrap gap-3 mb-8">
+            <div
+              className="flex flex-wrap gap-3 mb-8"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <a
                 href="tel:05238600068"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-navy text-white font-semibold shadow-[0_12px_28px_rgba(10,31,68,0.16)] hover:bg-navy-light transition-colors"
@@ -56,7 +85,11 @@ export default function LienHePage() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="rounded-[28px] border border-[#d9e4f4] bg-[linear-gradient(180deg,#ffffff_0%,#eff5fc_100%)] p-6 shadow-sm">
+              <div
+                className="rounded-[28px] border border-[#d9e4f4] bg-[linear-gradient(180deg,#ffffff_0%,#eff5fc_100%)] p-6 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="260"
+              >
                 <div className="w-11 h-11 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 </div>
@@ -66,7 +99,11 @@ export default function LienHePage() {
                 </p>
               </div>
 
-              <div className="rounded-[28px] border border-[#d9e4f4] bg-[linear-gradient(180deg,#ffffff_0%,#eff5fc_100%)] p-6 shadow-sm">
+              <div
+                className="rounded-[28px] border border-[#d9e4f4] bg-[linear-gradient(180deg,#ffffff_0%,#eff5fc_100%)] p-6 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="340"
+              >
                 <div className="w-11 h-11 rounded-2xl bg-green-50 text-green-600 flex items-center justify-center mb-4">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 </div>
@@ -76,7 +113,11 @@ export default function LienHePage() {
                 </p>
               </div>
 
-              <div className="rounded-[28px] border border-[#e4dcc9] bg-[linear-gradient(180deg,#fffdfa_0%,#f6f1e7_100%)] p-6 shadow-sm">
+              <div
+                className="rounded-[28px] border border-[#e4dcc9] bg-[linear-gradient(180deg,#fffdfa_0%,#f6f1e7_100%)] p-6 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="420"
+              >
                 <div className="w-11 h-11 rounded-2xl bg-gold/12 text-gold-dark flex items-center justify-center mb-4">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 </div>
@@ -88,7 +129,11 @@ export default function LienHePage() {
             </div>
           </div>
 
-          <div className="rounded-[36px] border border-[#d8e3f3] bg-[linear-gradient(180deg,#fcfdff_0%,#eef4fb_100%)] p-6 md:p-7 shadow-[0_20px_50px_rgba(23,42,87,0.08)]">
+          <div
+            className="rounded-[36px] border border-[#d8e3f3] bg-[linear-gradient(180deg,#fcfdff_0%,#eef4fb_100%)] p-6 md:p-7 shadow-[0_20px_50px_rgba(23,42,87,0.08)]"
+            data-aos="fade-left"
+            data-aos-delay="180"
+          >
             <div className="rounded-[28px] bg-navy text-white p-8 md:p-10 h-full relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
@@ -163,7 +208,11 @@ export default function LienHePage() {
       </section>
 
       <section className="px-4 pb-24">
-        <div className="max-w-7xl mx-auto rounded-[40px] border border-[#d8e3f3] bg-[linear-gradient(180deg,#fcfdff_0%,#eef4fb_100%)] p-3 md:p-4 shadow-sm">
+        <div
+          className="max-w-7xl mx-auto rounded-[40px] border border-[#d8e3f3] bg-[linear-gradient(180deg,#fcfdff_0%,#eef4fb_100%)] p-3 md:p-4 shadow-sm"
+          data-aos="fade-up"
+          data-aos-delay="120"
+        >
           <div className="rounded-[32px] overflow-hidden relative group min-h-[460px]">
             <iframe
               src={`https://www.google.com/maps?q=${encodedOfficeAddress}&z=17&hl=vi&output=embed`}
