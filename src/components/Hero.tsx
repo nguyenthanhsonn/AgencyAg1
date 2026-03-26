@@ -202,7 +202,7 @@ export default function Hero() {
                     direction="up"
                     duration={1}
                     className="count-up-text"
-                    startCounting={false}
+                    // startCounting={false}
                   />
                   +
                 </span>
@@ -223,7 +223,7 @@ export default function Hero() {
                     direction="up"
                     duration={1}
                     className="count-up-text"
-                    startCounting={false}
+                    // startCounting={false}
                   />
                   +
                 </span>
@@ -244,7 +244,7 @@ export default function Hero() {
                     direction="up"
                     duration={1}
                     className="count-up-text"
-                    startCounting={false}
+                    // startCounting={false}
                   />
                   M+
                 </span>
