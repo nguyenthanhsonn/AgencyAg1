@@ -9,6 +9,7 @@ interface CountUpProps {
   duration?: number;
   className?: string;
   startWhen?: boolean;
+  startCounting?: boolean;
   separator?: string;
   onStart?: () => void;
   onEnd?: () => void;
@@ -22,6 +23,7 @@ export default function CountUp({
   duration = 2,
   className = '',
   startWhen = true,
+  startCounting,
   separator = '',
   onStart,
   onEnd
@@ -38,6 +40,7 @@ export default function CountUp({
   });
 
   const isInView = useInView(ref, { once: true, margin: '0px' });
+  const shouldStart = startCounting ?? startWhen;
 
   const getDecimalPlaces = (num: number): number => {
     const str = num.toString();
@@ -76,7 +79,7 @@ export default function CountUp({
   }, [from, to, direction, formatValue]);
 
   useEffect(() => {
-    if (isInView && startWhen) {
+    if (isInView && shouldStart) {
       if (typeof onStart === 'function') {
         onStart();
       }
@@ -99,7 +102,7 @@ export default function CountUp({
         clearTimeout(durationTimeoutId);
       };
     }
-  }, [isInView, startWhen, motionValue, direction, from, to, delay, onStart, onEnd, duration]);
+  }, [isInView, shouldStart, motionValue, direction, from, to, delay, onStart, onEnd, duration]);
 
   useEffect(() => {
     const unsubscribe = springValue.on('change', (latest: number) => {
